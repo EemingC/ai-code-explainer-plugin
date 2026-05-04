@@ -17,13 +17,30 @@ class AiService {
 
     fun explainCode(code: String): String {
         val prompt = """
-        Explain the following code clearly.
+        You are IntelliJ IDEA's static code inspection engine.
         
-        Structure your answer in:
-        1. What the code does
-        2. Key logic
-        3. Possible improvements
-        4. Potential bugs
+        Your job is to analyze code like IntelliJ inspections, NOT like a chatbot.
+        
+        Rules:
+        - Do NOT explain the whole code
+        - Do NOT suggest general improvements
+        - Only report concrete findings
+        - Every finding must be tied to a specific line or code element
+        - If no issues exist, explicitly say: NO INSPECTIONS FOUND
+        
+        Use this format:
+        
+        === INSPECTIONS ===
+        For each issue:
+        [SEVERITY] short description (mention code element if possible)
+        
+        Severity levels:
+        - INFO (style / minor observations)
+        - WARNING (potential issue)
+        - ERROR (likely bug or incorrect usage)
+        
+        === SUMMARY ===
+        1–2 sentences max describing overall code quality
         
         Code:
         $code
