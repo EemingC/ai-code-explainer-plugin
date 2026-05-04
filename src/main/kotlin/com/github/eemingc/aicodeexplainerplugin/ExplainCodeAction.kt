@@ -2,6 +2,7 @@ package com.github.eemingc.aicodeexplainerplugin
 
 import com.github.eemingc.aicodeexplainerplugin.services.AiService
 import com.github.eemingc.aicodeexplainerplugin.toolWindow.MyToolWindowFactory
+import com.github.eemingc.aicodeexplainerplugin.toolWindow.MyToolWindowFactory.MyToolWindowState
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -38,7 +39,10 @@ class ExplainCodeAction : AnAction() {
                 }
 
                 ApplicationManager.getApplication().invokeLater {
-                    MyToolWindowFactory.MyToolWindowState.contentArea?.text = result
+                    MyToolWindowState.toolWindow?.show()
+                    MyToolWindowState.toolWindow?.activate(null)
+
+                    MyToolWindowState.contentArea?.text = result
                 }
             }
         }.queue()
