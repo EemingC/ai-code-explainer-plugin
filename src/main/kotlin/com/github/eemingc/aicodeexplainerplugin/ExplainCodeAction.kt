@@ -5,6 +5,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.ui.Messages
 
+import com.github.eemingc.aicodeexplainerplugin.services.AiService
+
+
 class ExplainCodeAction : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
@@ -25,9 +28,17 @@ class ExplainCodeAction : AnAction() {
             return
         }
 
+        val aiService = AiService()
+
+        val result = try {
+            aiService.explainCode(selectedText)
+        } catch (e: Exception) {
+            "Error: ${e.message}"
+        }
+
         Messages.showMessageDialog(
-            "Selected code:\n$selectedText",
-            "AI Code Explainer",
+            result,
+            "AI Code Explanation",
             Messages.getInformationIcon()
         )
     }
