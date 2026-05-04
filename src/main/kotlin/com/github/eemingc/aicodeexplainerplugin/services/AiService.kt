@@ -4,13 +4,16 @@ import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
-import io.github.cdimascio.dotenv.dotenv
+import com.intellij.ide.util.PropertiesComponent
 
 class AiService {
 
-    val dotenv = dotenv()
+
     private val client = OkHttpClient()
-    private val apiKey = dotenv["API_KEY"]
+    private val apiKey: String
+        get() = PropertiesComponent.getInstance()
+            .getValue("OPENROUTER_API_KEY")
+            ?: error("API key not set. Please configure OPENROUTER_API_KEY in IDE settings.")
 
     fun explainCode(code: String): String {
         val prompt = """
