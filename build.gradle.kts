@@ -14,4 +14,10 @@ dependencies {
         intellijIdea("2025.2.6.2")
         testFramework(TestFrameworkType.Platform)
     }
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    implementation("org.json:json:20240303")
+
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 }
