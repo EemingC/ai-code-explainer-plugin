@@ -12,6 +12,7 @@ class MyToolWindowFactory : ToolWindowFactory {
 
     object  MyToolWindowState {
         var contentArea: JTextArea? = null
+        var toolWindow: ToolWindow? = null
     }
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
@@ -19,10 +20,13 @@ class MyToolWindowFactory : ToolWindowFactory {
         panel.layout = BoxLayout(panel, BoxLayout.Y_AXIS)
 
         val textArea = JTextArea()
+        textArea.font = com.intellij.util.ui.JBFont.label().deriveFont(13f)
+        textArea.isEditable = false
         textArea.lineWrap = true
         textArea.wrapStyleWord = true
 
         MyToolWindowState.contentArea = textArea
+        MyToolWindowState.toolWindow = toolWindow
 
         val scrollPane = JBScrollPane(textArea)
 
