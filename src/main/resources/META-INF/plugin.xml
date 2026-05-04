@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.eemingc.aicodeexplainerplugin</id>
-    <name>>AI Code Explainer</name>
+    <name>AI Code Explainer</name>
     <vendor>eemingc</vendor>
     <description><![CDATA[
         <p><b>ai-code-explainer-plugin</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
