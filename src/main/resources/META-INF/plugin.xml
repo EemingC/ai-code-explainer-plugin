@@ -19,7 +19,15 @@
                 description="Explain selected code using AI">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
+
+        <action id="SetApiKeyAction"
+                class="com.github.eemingc.aicodeexplainerplugin.SetApiKeyAction"
+                text="Set API Key"
+                description="Save OpenRouter API Key">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
     </actions>
+
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.eemingc.aicodeexplainerplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
