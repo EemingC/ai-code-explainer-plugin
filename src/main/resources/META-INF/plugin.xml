@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.eemingc.aicodeexplainerplugin</id>
-    <name>ai-code-explainer-plugin</name>
+    <name>>AI Code Explainer</name>
     <vendor>eemingc</vendor>
     <description><![CDATA[
         <p><b>ai-code-explainer-plugin</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
@@ -11,6 +11,15 @@
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
+
+    <actions>
+        <action id="ExplainCodeAction"
+                class="com.github.eemingc.aicodeexplainerplugin.ExplainCodeAction"
+                text="Explain Code"
+                description="Explain selected code using AI">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.eemingc.aicodeexplainerplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
