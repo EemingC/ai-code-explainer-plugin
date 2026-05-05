@@ -1,42 +1,121 @@
-# ai-code-explainer-plugin
+# 🤖 AI Code Explainer Plugin for IntelliJ
 
 ![Build](https://github.com/EemingC/ai-code-explainer-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [group](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml), [name](./src/main/resources/META-INF/plugin.xml), and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin [description](./src/main/resources/META-INF/plugin.xml) (see [Tips][docs:plugin-description]) and this README to describe what your plugin does.
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+An IntelliJ Platform plugin that uses AI to analyze and explain selected code directly inside the IDE.  
+The plugin focuses on structured output, clean IntelliJ integration, and a smooth developer experience.
 
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+---
 
-## Installation
+## ✨ Features
 
-- Using the IDE built-in plugin system:
+- 🔍 Explain selected code via right-click action  
+- 🧠 AI-powered analysis with structured output  
+- 🧩 Tool Window integration for displaying results  
+- ⚡ Background execution (no UI freezing)  
+- 🔐 Secure API key storage using IntelliJ `PropertiesComponent`  
 
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "ai-code-explainer-plugin"</kbd> >
-  <kbd>Install</kbd>
+---
 
-- Using JetBrains Marketplace:
+## 🛠️ Tech Stack
 
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
+- Kotlin  
+- IntelliJ Platform SDK  
+- Gradle  
+- OkHttp  
+- OpenRouter API  
 
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+---
 
-- Manually:
+## 🚀 Getting Started
 
-  Download the [latest release](https://github.com/EemingC/ai-code-explainer-plugin/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+### 1. Clone the repository
 
+```bash
+git clone https://github.com/YOUR_USERNAME/ai-code-explainer-plugin.git
+cd ai-code-explainer-plugin
+```
+
+---
+
+### 2. Run the plugin
+
+    ./gradlew runIde
+
+This launches a sandbox IntelliJ instance with the plugin installed.
+
+---
+
+### 3. Set API Key
+
+In the sandbox IDE:
+
+<kbd>Tools</kbd> → <kbd>Set API Key</kbd>  
+
+Paste your OpenRouter API key.
+
+---
+
+### 4. Use the plugin
+
+1. Open any file  
+2. Select some code  
+3. Right-click → <kbd>Explain Code</kbd>  
+
+👉 The result will appear in the Tool Window.
+
+---
+
+## 🏗️ Architecture
+
+The plugin follows a simple layered structure:
+
+- **Action layer** → handles user interaction  
+- **Service layer** → communicates with AI API  
+- **UI layer** → displays results in Tool Window  
+
+**Flow:**
+
+User action → AI service → Tool Window
+
+---
+
+## 🔐 API Key Storage
+
+The plugin stores the API key using IntelliJ’s built-in system:
+
+`PropertiesComponent.getInstance()`
+
+✔ No hardcoded secrets  
+✔ No `.env` file required  
+✔ Persistent across sessions  
+
+---
+
+## 🎯 Design Goals
+
+- Clean IntelliJ Platform integration  
+- Structured and predictable AI output  
+- Responsive UI (no blocking calls)  
+- Minimal and readable architecture  
+
+---
+
+## 🚧 Future Improvements
+
+- Settings page for API configuration  
+- Improved UI formatting (sections, styling)  
+- Multiple modes (Explain / Improve / Detect bugs)  
+- Inline editor annotations (inspection-style)  
+
+---
+
+## 📄 Notes
+
+This project was created as part of an application task for an AI-related IntelliJ plugin role.  
+The focus is on **code quality, structure, and IntelliJ integration**, rather than production completeness.
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
