@@ -33,8 +33,10 @@ The plugin focuses on structured output, clean IntelliJ integration, and a smoot
 
 ### 1. Clone the repository
 
+```bash
 git clone https://github.com/YOUR_USERNAME/ai-code-explainer-plugin.git
 cd ai-code-explainer-plugin
+```
 
 ---
 
