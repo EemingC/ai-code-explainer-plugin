@@ -56,15 +56,26 @@ In the sandbox IDE:
 
 Paste your OpenRouter API key.
 
+<p align="center">
+  <img src="screenshots/SetAPIKey.png" width="700"/>
+</p>
 ---
 
 ### 4. Use the plugin
 
 1. Open any file  
 2. Select some code  
-3. Right-click → <kbd>Explain Code</kbd>  
+3. Right-click → <kbd>Explain Code</kbd>
+
+<p align="center">
+  <img src="screenshots/ExplainCode.png" width="700"/>
+</p>
 
 👉 The result will appear in the Tool Window.
+
+<p align="center">
+  <img src="screenshots/ToolWindow.png" width="700"/>
+</p>
 
 ---
 
