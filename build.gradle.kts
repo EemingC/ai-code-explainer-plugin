@@ -19,5 +19,5 @@ dependencies {
 
     implementation("org.json:json:20240303")
 
-    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+    implementation("io.github.cdimascio:dotenv-kotlin:6.5.1")
 }
