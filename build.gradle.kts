@@ -17,7 +17,7 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
-    implementation("org.json:json:20240303")
+    implementation("org.json:json:20251224")
 
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 }
